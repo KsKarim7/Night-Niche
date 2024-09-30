@@ -8,7 +8,7 @@ from django.core.validators import MinLengthValidator
 
 class UserRegistrationForm(UserCreationForm):
     birth_date = forms.DateField(widget=forms.DateInput(attrs={'type':'date'}))
-    phone_number = forms.CharField(max_length=11, validators=[MinLengthValidator(11)], blank=True, null=True)
+    phone_number = forms.CharField(max_length=11, validators=[MinLengthValidator(11)])
   
     class Meta:
         model = User
@@ -29,3 +29,17 @@ class UserRegistrationForm(UserCreationForm):
                 account_no = 222010 + our_user.id
         )
         return our_user
+    
+    
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({
+                'class' : (
+                    'appearance-none block w-full bg-blue-300 '
+                    'text-gray-700 border border-gray-200 rounded '
+                    'py-3 px-4 leading-tight focus:outline-none '
+                    'focus:bg-white focus:border-gray-500'
+                ) 
+            })
