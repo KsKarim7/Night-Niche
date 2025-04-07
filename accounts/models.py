@@ -5,7 +5,8 @@ from django.core.validators import MinLengthValidator
 # Create your models here.
 class UserAccount(models.Model):
     user = models.OneToOneField(User, related_name='account',on_delete=models.CASCADE)
-    phone_number = models.CharField(max_length=11, validators=[MinLengthValidator(11)], blank=True, null=True)
+    image = models.ImageField(upload_to='account/images/')
+    phone_no = models.CharField(max_length=11, validators=[MinLengthValidator(11)], blank=True, null=True)
     account_no = models.IntegerField(unique=True)
     birth_date = models.DateField(null=True,blank=True)
     balance = models.DecimalField(max_digits=12, decimal_places=2, default=0)
