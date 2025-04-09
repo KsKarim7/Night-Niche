@@ -4,7 +4,12 @@ from .models import UserAccount
 
 # Register your models here.
 class UserAccountAdmin(admin.ModelAdmin):
-    list_display = ['phone_no','image']
+    list_display = ['first_name','last_name','phone_no','image']
+
+    def first_name(self,obj):
+        return obj.user.first_name
+    def last_name(self,obj):
+        return obj.user.last_name
 
 
 admin.site.register(UserAccount,UserAccountAdmin )
