@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import FormView
-from django.contrib.auth import login, logout,update_session_auth_hash
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import redirect
@@ -14,7 +13,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login,logout,update_session_auth_hash
 from rest_framework.authtoken.models import Token
 
 
@@ -96,11 +95,18 @@ class UserLoginApiView(APIView):
 
             if(user):
                 token, _ = Token.objects.get_or_create(user=user)
+                login(request, user)
                 return Response({'token': token.key,'user_id':user.id})
             else:
                 return Response({'error':"Invalid Credentials"})
         
         return Response(serializer.errors)
+    
+class UserLogoutView(APIView):
+    def get(self,request):
+        request.user.auth_token.delete()
+        logout(request)
+        return redirect('login')
 
 
 
