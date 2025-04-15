@@ -1,11 +1,11 @@
 {% extends 'base.html' %} 
 {% load static %} 
 
-{% block head_title %}Banking System{% endblock %} {% block content %}
-<div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+{% block head_title %}Night Niche{% endblock %} {% block content %}
+{% comment %}<div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
 
     
-    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
+     <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24    px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
         <h1 class="font-bold text-4xl my-4">Welcome to Night Niche</h1>
         <p class="leading-normal mb-4">
             Discover your dream getaway with Night Niche, your one-stop destination for hassle-free hotel bookings. Whether you're planning a romantic escape, a family vacation, or a business trip, we offer a wide range of accommodations to suit every taste and budget. 
@@ -13,10 +13,77 @@
         <div class="flex justify-end w-full">
             <a href="" class="bg-blue-900 text-white rounded-xl hover:bg-white  hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent">Explore</a>
         </div>
-    </div>
+    </div> 
+    
     <div class="w-full lg:w-1/2 lg:py-6 text-center ">
-        {% comment %} <img class ="rounded-2xl" src ="{% static './img/bank.jpg' %}"/> {% endcomment %}
+        <img class ="rounded-2xl" src ="{% static './img/bank.jpg' %}"/> 
     </div>
-</div>
+</div> {% endcomment %}
+{% comment %} <h1>asasdfasddf</h1>
+<div class="carousel w-full">
+    <div id="item1" class="carousel-item w-full">
+      <img
+        src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
+        class="w-full" />
+    </div>
+    <div id="item2" class="carousel-item w-full">
+      <img
+        src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
+        class="w-full" />
+    </div>
+    <div id="item3" class="carousel-item w-full">
+      <img
+        src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
+        class="w-full" />
+    </div>
+    <div id="item4" class="carousel-item w-full">
+      <img
+        src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+        class="w-full" />
+    </div>
+  </div>
+  <div class="flex w-full justify-center gap-2 py-2">
+    <a href="#item1" class="btn btn-xs">1</a>
+    <a href="#item2" class="btn btn-xs">2</a>
+    <a href="#item3" class="btn btn-xs">3</a>
+    <a href="#item4" class="btn btn-xs">4</a>
+  </div> {% endcomment %}
 
-{% endblock %}
+  <div class="bg-blue-200 mx-30">
+
+      <div class="relative">
+          <!-- Text overlay (always visible, centered) -->
+          <div class="absolute inset-0 flex items-center  z-10 pointer-events-none">
+              <h2 class="text-white text-3xl md:text-4xl font-bold bg-black bg-opacity-50 px-6 py-2 rounded">
+                  Where Comfort Meets Convenience
+                </h2>
+            </div>
+            
+            <!-- Carousel -->
+            <div class="carousel w-full">
+                <div id="item1" class="carousel-item w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp" class="w-full" />
+                </div>
+                <div id="item2" class="carousel-item w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp" class="w-full" />
+                </div>
+                <div id="item3" class="carousel-item w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp" class="w-full" />
+                </div>
+                <div id="item4" class="carousel-item w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp" class="w-full" />
+                </div>
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="flex w-full justify-center gap-2 py-2">
+                <a href="#item1" class="btn btn-xs">1</a>
+                <a href="#item2" class="btn btn-xs">2</a>
+                <a href="#item3" class="btn btn-xs">3</a>
+                <a href="#item4" class="btn btn-xs">4</a>
+            </div>
+        </div>
+    </div>
+        
+        
+        {% endblock %}
