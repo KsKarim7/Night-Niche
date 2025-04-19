@@ -1,4 +1,5 @@
 from rest_framework import generics
+from django.shortcuts import redirect
 # from .serializers import TypeSerializer
 
 # class TypeListCreateAPIView(generics.ListCreateAPIView):
@@ -12,7 +13,7 @@ from .serializers import TypeSerializer
 class TypeViewSet(viewsets.ModelViewSet):
     queryset = Type.objects.all()
     serializer_class = TypeSerializer
-
+    
 
 
 class TypeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
