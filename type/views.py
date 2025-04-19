@@ -7,16 +7,16 @@ from django.shortcuts import redirect
 #     serializer_class = TypeSerializer
 
 from rest_framework import viewsets
-from .models import Type
+from .models import HotelType
 from .serializers import TypeSerializer
 
 class TypeViewSet(viewsets.ModelViewSet):
-    queryset = Type.objects.all()
+    queryset = HotelType.objects.all()
     serializer_class = TypeSerializer
     
 
 
 class TypeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Type.objects.all()
+    queryset = HotelType.objects.all()
     serializer_class = TypeSerializer
     lookup_field = 'id'

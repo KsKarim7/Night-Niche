@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from .models import Type
+from .models import HotelType
 from django.utils.text import slugify
 
 class TypeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Type
+        model = HotelType
         fields = '__all__'
 
     def create(self, validated_data):
