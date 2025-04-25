@@ -13,7 +13,14 @@ from .serializers import TypeSerializer
 class TypeViewSet(viewsets.ModelViewSet):
     queryset = HotelType.objects.all()
     serializer_class = TypeSerializer
-    
+    def create(self, request, *args, **kwargs):
+        response = super().create(request, *args, **kwargs)
+        response.data = {
+            'message': 'Hotel Type created successfully!',
+            'name': '',
+            'slug': ''
+        }
+        return response
 
 
 class TypeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):

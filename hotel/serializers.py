@@ -10,3 +10,16 @@ class HotelSerializer(serializers.ModelSerializer):
         model = Hotel
         fields = '__all__'
 
+class RoomSerializer(serializers.ModelSerializer):
+    room_type = serializers.PrimaryKeyRelatedField(queryset=RoomType.objects.all())
+
+    class Meta:
+        model = Room
+        fields = '__all__'
+
+class RoomTypeSerializer(serializers.ModelSerializer):
+    hotel = serializers.PrimaryKeyRelatedField(queryset=Hotel.objects.all())
+
+    class Meta:
+        model = RoomType
+        fields = '__all__'
