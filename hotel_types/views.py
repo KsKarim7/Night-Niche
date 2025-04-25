@@ -8,11 +8,11 @@ from django.shortcuts import redirect
 
 from rest_framework import viewsets
 from .models import HotelType
-from .serializers import TypeSerializer
+from .serializers import HotelTypesSerializer
 
 class TypeViewSet(viewsets.ModelViewSet):
     queryset = HotelType.objects.all()
-    serializer_class = TypeSerializer
+    serializer_class = HotelTypesSerializer
     def create(self, request, *args, **kwargs):
         response = super().create(request, *args, **kwargs)
         response.data = {
@@ -25,5 +25,5 @@ class TypeViewSet(viewsets.ModelViewSet):
 
 class TypeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = HotelType.objects.all()
-    serializer_class = TypeSerializer
+    serializer_class = HotelTypesSerializer
     lookup_field = 'id'

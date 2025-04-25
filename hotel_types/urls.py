@@ -22,7 +22,7 @@ from rest_framework.routers import DefaultRouter
 from .views import TypeViewSet 
 
 router = DefaultRouter()
-router.register(r'', TypeViewSet, basename='types') 
+router.register(r'', TypeViewSet, basename='hotel_types') 
 
 urlpatterns = router.urls
 

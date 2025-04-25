@@ -1,11 +1,11 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from type.models import HotelType
+from hotel_types.models import HotelType
  
 
 class Hotel(models.Model):
   name = models.CharField(max_length=255)
-  type = models.ManyToManyField(HotelType) 
+  types = models.ManyToManyField(HotelType) 
   rating = models.PositiveIntegerField(
         default=0,
         validators=[MinValueValidator(0), MaxValueValidator(5)]
@@ -14,7 +14,7 @@ class Hotel(models.Model):
   phone_number = models.CharField(max_length=11, blank=True, null=True)
   email_address = models.EmailField(blank=True, null=True)
   description = models.TextField(blank=True)
-  image = models.ImageField(upload_to='posts/media/uploads/',blank = True, null = True)
+  image = models.ImageField(upload_to='hotel/media/uploads/',blank = True, null = True)
  
 
   def __str__(self):

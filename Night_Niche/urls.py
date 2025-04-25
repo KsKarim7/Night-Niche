@@ -22,6 +22,6 @@ urlpatterns = [
     path('', HomeView.as_view(),name = 'home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('api/type/', include('type.urls')), 
+    path('api/hotel_types/', include('hotel_types.urls')), 
     path('api/hotel/', include('hotel.urls')), 
 ]

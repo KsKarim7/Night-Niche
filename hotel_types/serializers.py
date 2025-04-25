@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import HotelType
 from django.utils.text import slugify
 
-class TypeSerializer(serializers.ModelSerializer):
+class HotelTypesSerializer(serializers.ModelSerializer):
     class Meta:
         model = HotelType
         fields = '__all__'

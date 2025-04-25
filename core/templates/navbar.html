@@ -26,15 +26,17 @@
     <nav class="bg-blue shadow-sm">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <!-- Logo -->
-        <div class="text-2xl font-bold text-gray-800">🌃Night Niche</div>
-  
+        {% comment %} <div class="text-2xl font-bold text-gray-800">🌃Night Niche</div> {% endcomment %}
+        <div class="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center">
+          <span class="text-white font-bold text-2xl">NN</span>
+        </div>
         <!-- Nav Links -->
         <ul class="hidden md:flex space-x-5 text-gray-600 font-medium">
           <li><a href="#" class="hover:text-blue-700 font-semibold">Home</a></li>
           <li><a href="#" class="hover:text-blue-700">Hotels</a></li>
           <li><a href="#" class="hover:text-blue-700">Balance</a></li>
           <li><a href="#" class="hover:text-blue-700">Contact Us</a></li>
-          <li><a href="{% url 'types-list' %}" class="hover:text-blue-700">Add Room Types</a></li>
+          <li><a href="{% url 'types-list' %}" class="hover:text-blue-700">Add Hotel Types</a></li>
         </ul>
   
         <!-- CTA Button -->
